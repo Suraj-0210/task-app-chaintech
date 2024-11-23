@@ -50,7 +50,7 @@ The API documentation is available through **Swagger UI**:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/task-management-api.git
+   git clone https://github.com/Suraj-0210/task-app-lucidity.git
    cd task-management-api
    ```
 
