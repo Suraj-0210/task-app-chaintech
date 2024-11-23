@@ -103,6 +103,7 @@ npm run dev
 |--------|-----------------|------------------------------|---------------|
 | POST   | `/api/users/register` | Register a new user    | ❌            |
 | POST   | `/api/users/login`    | User login             | ❌            |
+| POST   | `/api/users/logout`   | User logout            | ❌            |
 
 ### Task Endpoints
 | Method | Endpoint                | Description                 | Auth Required |
@@ -112,7 +113,7 @@ npm run dev
 | GET    | `/api/tasks/:id`        | Get task by ID              | ✅            |
 | PUT    | `/api/tasks/:id`        | Update a task               | ✅            |
 | DELETE | `/api/tasks/:id`        | Delete a task               | ✅            |
-| PUT    | `/api/tasks/:id/status` | Update task status          | ✅            |
+| PATCH  | `/api/tasks/:id/status` | Update task status          | ✅            |
 
 **For a detailed description of request and response payloads, visit the Swagger UI.**
 
