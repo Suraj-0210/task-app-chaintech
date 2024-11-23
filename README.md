@@ -29,7 +29,7 @@ A **Task Management API** built using Node.js, Express.js, and MongoDB, designed
 - **Database**: MongoDB (Mongoose ODM)
 - **Authentication**: JSON Web Tokens (JWT)
 - **API Documentation**: Swagger (OpenAPI)
-- **Middleware**: `morgan`, `helmet`, `express-validator`
+- **Middleware**: `morgan`, `express-validator`
 
 ---
 
