@@ -66,7 +66,7 @@ The API documentation is available through **Swagger UI**:
    npm start
    ```
 
-5. Visit `http://localhost:<PORT>/api-docs/` to access the API.
+5. Visit `http://localhost:<PORT>` to access the API.
 
 ---
 
