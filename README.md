@@ -66,7 +66,7 @@ The API documentation is available through **Swagger UI**:
    npm start
    ```
 
-5. Visit `http://localhost:<PORT>` to access the API.
+5. Visit `http://localhost:<PORT>/api-docs/` to access the API.
 
 ---
 
@@ -135,21 +135,3 @@ task-management-api/
 
 ---
 
-## Contributing
-We welcome contributions! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature/<feature-name>
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add new feature: <feature-name>"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature/<feature-name>
-   ```
-5. Submit a Pull Request.
-
----
