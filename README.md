@@ -10,8 +10,7 @@ A **Task Management API** built using Node.js, Express.js, and MongoDB, designed
 - [Environment Variables](#environment-variables)
 - [Usage](#usage)
 - [Endpoints](#endpoints)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
