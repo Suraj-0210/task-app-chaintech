@@ -50,8 +50,8 @@ The API documentation is available through **Swagger UI**:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Suraj-0210/task-app-lucidity.git
-   cd task-management-api
+   git clone https://github.com/Suraj-0210/task-app-chaintech.git
+   cd task-app-chaintech
    ```
 
 2. Install dependencies:
