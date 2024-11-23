@@ -93,11 +93,7 @@ Use `nodemon` for development:
 npm run dev
 ```
 
-### Running Tests
-If you have test cases, run them using:
-```bash
-npm test
-```
+
 
 ---
 
