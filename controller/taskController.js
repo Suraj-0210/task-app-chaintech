@@ -26,7 +26,7 @@ import Task from "../model/Task.js";
  *                 description: Due date of the task
  *               category:
  *                 type: string
- *                 description: Category of the task
+ *                 description: Category of the task ("Work", "Personal", "Shopping", "Others")
  *             required:
  *               - title
  *     responses:

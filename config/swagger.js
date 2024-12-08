@@ -1,5 +1,16 @@
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Determine the server URL based on the environment
+const ENV = process.env.ENV || "Local"; // Default to 'Local' if ENV is not set
+const serverUrl =
+  ENV === "Prod"
+    ? "https://task-app-node.onrender.com"
+    : "http://localhost:3003";
 
 // Define Swagger options
 const options = {
@@ -16,7 +27,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3003", // Base URL of the API
+        url: serverUrl, // Dynamically set the base URL
       },
     ],
   },
