@@ -21,7 +21,7 @@ const app = express();
 const __diname = path.resolve();
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Your frontend URL
+  origin: "http://localhost:5173, https://task-app-8fjy.onrender.com", // Your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true, // This allows cookies to be sent with requests
