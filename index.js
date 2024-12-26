@@ -18,8 +18,6 @@ const morganFormat = ":method :url :status :response-time ms";
 
 const app = express();
 
-const __diname = path.resolve();
-
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
@@ -66,10 +64,6 @@ app.use("/api/task", taskRoutes);
 app.use("/api/auth", authRoutes);
 
 app.use(express.static(path.join(__diname, "/client/dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__diname, "client", "dist", "index.html"));
-});
 
 app.get("/", (req, res) => {
   res.json({ Message: "You are Good to GO." });

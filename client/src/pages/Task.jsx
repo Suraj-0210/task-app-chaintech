@@ -113,7 +113,7 @@ function Task() {
   const handleMarkAsCompleted = async (id, isCompleted) => {
     try {
       await axios.patch(
-        `/api/task/${id}/status`,
+        `http://localhost:3003/api/task/${id}/status`,
         {
           isCompleted: !isCompleted,
         },

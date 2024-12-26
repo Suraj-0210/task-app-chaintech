@@ -25,7 +25,7 @@ function Login() {
     dispatch(signInStart());
     try {
       const response = await axios.post(
-        "/api/auth/signin",
+        "http://localhost:3003/api/auth/signin",
         {
           email,
           password,
