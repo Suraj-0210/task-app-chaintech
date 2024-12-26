@@ -63,8 +63,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/task", taskRoutes);
 app.use("/api/auth", authRoutes);
 
-app.use(express.static(path.join(__diname, "/client/dist")));
-
 app.get("/", (req, res) => {
   res.json({ Message: "You are Good to GO." });
 });
