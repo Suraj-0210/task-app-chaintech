@@ -21,12 +21,22 @@ const app = express();
 const __diname = path.resolve();
 
 const corsOptions = {
-  origin: [
-    "https://task-app-8fjy.onrender.com", // Frontend URL in production
-  ], // Your frontend URL
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:5173", // Local development frontend
+      "https://task-app-8fjy.onrender.com", // Production frontend
+    ];
+
+    // If the request origin is in the allowedOrigins list or if there's no origin (for certain requests like curl or Postman)
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // This allows cookies to be sent with requests
+  credentials: true, // Allows cookies to be sent with requests
 };
 
 // Middleware
