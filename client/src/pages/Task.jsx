@@ -113,7 +113,7 @@ function Task() {
   const handleMarkAsCompleted = async (id, isCompleted) => {
     try {
       await axios.patch(
-        `http://localhost:3003/api/task/${id}/status`,
+        `https://task-app-node.onrender.com/api/task/${id}/status`,
         {
           isCompleted: !isCompleted,
         },

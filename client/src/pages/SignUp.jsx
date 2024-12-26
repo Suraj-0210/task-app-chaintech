@@ -24,13 +24,16 @@ function SignUp() {
 
     try {
       // Send POST request to /api/auth/signup using fetch
-      const response = await fetch("http://localhost:3003/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://task-app-node.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       // Check if the response is successful (status 200)
       if (response.status === 200) {
