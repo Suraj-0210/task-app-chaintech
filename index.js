@@ -22,7 +22,7 @@ const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
       "http://localhost:5173", // Local development frontend
-      "https://task-app-8fjy.onrender.com", // Production frontend
+      "https://task-app-frontend-yb58.onrender.com", // Production frontend
     ];
 
     // If the request origin is in the allowedOrigins list or if there's no origin (for certain requests like curl or Postman)

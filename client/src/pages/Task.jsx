@@ -49,7 +49,7 @@ function Task() {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3003/api/auth/logout"
+        "https://task-app-node.onrender.com/api/auth/logout"
       );
       alert(response.data.message);
       dispatch(signoutSuccess());
@@ -72,7 +72,7 @@ function Task() {
     try {
       if (editTaskId) {
         const response = await axios.put(
-          `http://localhost:3003/api/task/${editTaskId}`,
+          `https://task-app-node.onrender.com/api/task/${editTaskId}`,
           newTask,
           { withCredentials: true }
         );
@@ -84,7 +84,7 @@ function Task() {
         alert("Task updated successfully");
       } else {
         const response = await axios.post(
-          "http://localhost:3003/api/task",
+          "https://task-app-node.onrender.com/api/task",
           newTask,
           { withCredentials: true }
         );
@@ -100,7 +100,7 @@ function Task() {
 
   const handleDeleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:3003/api/task/${id}`, {
+      await axios.delete(`https://task-app-node.onrender.com/api/task/${id}`, {
         withCredentials: true,
       });
       setTasks((prevTasks) => prevTasks.filter((task) => task._id !== id));
