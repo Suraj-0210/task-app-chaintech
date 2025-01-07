@@ -2,8 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
-import cors from "cors"; // Import the cors package
-
+import cors from "cors";
 import connectToMongo from "./config/dbConfig.js";
 import userRoutes from "./route/userRoutes.js";
 import taskRoutes from "./route/taskRoutes.js";
@@ -11,13 +10,13 @@ import authRoutes from "./route/authRoutes.js";
 import logger from "./utils/logger.js";
 import { swaggerDocs } from "./config/swagger.js";
 
-import path from "path";
-
 dotenv.config();
+
 const morganFormat = ":method :url :status :response-time ms";
 
 const app = express();
 
+// CORS Configuration
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
@@ -25,7 +24,6 @@ const corsOptions = {
       "https://task-app-frontend-yb58.onrender.com", // Production frontend
     ];
 
-    // If the request origin is in the allowedOrigins list or if there's no origin (for certain requests like curl or Postman)
     if (allowedOrigins.includes(origin) || !origin) {
       callback(null, true);
     } else {
@@ -33,15 +31,28 @@ const corsOptions = {
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // Allows cookies to be sent with requests
+  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+  credentials: true,
 };
 
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors(corsOptions)); // Enable CORS for all routes
+app.use(cors(corsOptions));
 
+// Debug: Log received cookies
+app.use((req, res, next) => {
+  console.log("Cookies received:", req.cookies);
+  next();
+});
+
+// Debug: Log received headers (optional)
+app.use((req, res, next) => {
+  console.log("Headers received:", req.headers);
+  next();
+});
+
+// Logging requests
 app.use(
   morgan(morganFormat, {
     stream: {
@@ -69,7 +80,7 @@ app.get("/", (req, res) => {
 
 swaggerDocs(app);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`The Server is Running on PORT: ${PORT}`);

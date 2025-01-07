@@ -56,7 +56,7 @@ function Task() {
       );
       alert(response.data.message);
       dispatch(signoutSuccess());
-      navigate("/login");
+      navigate("/signin");
     } catch (err) {
       alert("Failed to log out");
     }
