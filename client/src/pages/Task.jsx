@@ -26,9 +26,12 @@ function Task() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:3003/api/task", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://task-app-node.onrender.com/api/task",
+          {
+            withCredentials: true,
+          }
+        );
         setTasks(response.data);
         setLoading(false);
       } catch (err) {
